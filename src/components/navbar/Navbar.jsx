@@ -1,5 +1,6 @@
 import React from 'react'
 import "./navbar.css"
+import Auth from '../auth/Auth'
 function Navbar() {
   return (
     // NAVBAR 
@@ -11,21 +12,7 @@ function Navbar() {
 
       {/* ITEMS */}
       <div id='nav-items'>
-        <div>
-          <p>HOME</p>
-        </div>
-
-        <div>
-          <p>HOME</p>
-        </div>
-
-        <div>
-          <p>HOME</p>
-        </div>
-
-        <div>
-          <p>HOME</p>
-        </div>
+   <Auth/>
       </div>
     </div>
   )

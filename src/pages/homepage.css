@@ -1,0 +1,14 @@
+#main-home{
+    background: url("https://cdn.mos.cms.futurecdn.net/rDJegQJaCyGaYysj2g5XWY-650-80.jpg.webp");
+    height: 100vh;
+    width: 100%;
+
+}
+h1{
+    font-size: 80px;
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}

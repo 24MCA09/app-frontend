@@ -1,9 +1,14 @@
 #navbar{
     height: 80px;
     width: 100%;
-    background: url("https://images.unsplash.com/photo-1671347020855-8f35d210ee9a?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     display: flex;
     justify-content: space-between;
+}
+h2{
+    color: white;
+    padding: 0px 20px;
+    font-size: 50px;
+font-family: cursive;
 }
 #nav-logo{
     height:80px;
