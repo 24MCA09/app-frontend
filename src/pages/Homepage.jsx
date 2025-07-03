@@ -3,6 +3,7 @@ import Navbar from '../components/navbar/Navbar'
 import './homepage.css'
 import Homecaro1 from '../components/Homecaro1'
 import Cards from '../components/Cards'
+import Moviepage from './Moviepage'
 
 function Homepage() {
   return (
@@ -22,6 +23,9 @@ function Homepage() {
         </div>
         <div>
           <Cards/>
+        </div>
+        <div>
+          <Moviepage/>
         </div>
         
     </div>
