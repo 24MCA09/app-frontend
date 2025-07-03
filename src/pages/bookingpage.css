@@ -1,0 +1,85 @@
+.theatre-container {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.seats-grid {
+  margin-top: 20px;
+}
+
+.seat-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.seat {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #ccc;
+  margin: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.seat:hover {
+  background-color: #e0f0ff;
+}
+
+.seat.selected {
+  background-color: green;
+  color: white;
+}
+
+.selection-info {
+  margin-top: 20px;
+  font-size: 16px;
+}
+#screenimg{
+    height: 18px;
+    width: 100%;
+    border-radius: 0px 0px 50px 50px;
+}
+.pay-btn{
+  font-size: 15px;
+    font-family: Arial, sans-serif;
+  padding: 6px 50px;
+  outline: none;
+  border-radius: 10px;
+  border: 2px solid black; 
+}
+.pay-btn:hover{
+    font-size: 18px;
+background-color: green;
+color: white;
+}
+
+#movie-time{
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+    }
+#movie-time button{
+  outline: none;
+  border: none;
+}
+
+.selected-btn {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid gold;
+  border-radius: 5px;
+}
+
+a{
+  text-decoration: none;
+  margin: 50px;
+}

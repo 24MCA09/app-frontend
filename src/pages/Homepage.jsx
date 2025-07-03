@@ -4,6 +4,7 @@ import './homepage.css'
 import Homecaro1 from '../components/Homecaro1'
 import Cards from '../components/Cards'
 import Moviepage from './Moviepage'
+import Footer from '../components/Footer'
 
 function Homepage() {
   return (
@@ -24,10 +25,8 @@ function Homepage() {
         <div>
           <Cards/>
         </div>
-        <div>
-          <Moviepage/>
-        </div>
-        
+       <section> <Footer/></section>
+       
     </div>
   )
 }

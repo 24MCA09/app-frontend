@@ -6,71 +6,92 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+/* auth.css */
 
-.container {
-  height: 400px;
-  width: 100%;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
+/* Common card layout for auth */
 .card {
-  border-radius: 10px;
-
-  width: 400px;
-  height: 400px;
   background-color: #ffffff;
-  padding: 10px 30px;
-}
-
-.card_title {
-  text-align: center;
-  padding: 10px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
 }
 
 .card_title h1 {
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 10px;
 }
 
-.form input {
-  margin: 10px 0;
-  width: 100%;
-  background-color: #e2e2e2;
-  border: none;
-  outline: none;
-  padding: 12px 20px;
-  border-radius: 4px;
+.card_title span {
+  font-size: 0.95rem;
+  color: #555;
 }
 
-.form button {
-  background-color: #4796ff;
-  color: #ffffff;
-  font-size: 16px;
-  outline: none;
-  border-radius: 5px;
-  border: none;
-  padding: 8px 15px;
-  width: 100%;
+.card_title button {
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  margin-left: 6px;
 }
 
+/* Terms section */
 .card_terms {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #333;
   display: flex;
   align-items: center;
-  padding: 10px;
+  gap: 8px;
 }
 
-.card_terms input[type="checkbox"] {
-  background-color: #e2e2e2;
+.card_terms input[type='checkbox'] {
+  transform: scale(1.1);
 }
 
-.card_terms span {
-  margin: 5px;
-  font-size: 13px;
+/* Form inputs */
+form .form-control {
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  background-color: #f9f9f9;
 }
 
-.card a {
-  color: #4796ff;
-  text-decoration: none;
+form .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.2);
+  background-color: #fff;
+}
+
+/* Buttons */
+.modal-footer .btn-primary {
+  background-color: #007bff;
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 6px 16px;
+  transition: background-color 0.2s ease;
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.modal-footer .btn-secondary {
+  border-radius: 8px;
+}
+
+/* Modal tweaks */
+.modal-body {
+  padding: 20px 24px;
+}
+
+.modal-header {
+  background-color: #f5f5f5;
+  border-bottom: none;
+}
+
+.modal-title {
+  font-weight: 600;
+  color: #333;
 }

@@ -16,7 +16,6 @@ function Auth() {
     const handleshow1 = () => {
         setshow2(false);
         setshow1(true);
-
     }
 
     const [show2, setshow2] = useState(false);
@@ -49,7 +48,8 @@ function Auth() {
                 setUserData({
                     username: "", email: "", password: ""
                 })
-                navigate('/login')
+                handleClose();
+                handleshow2();
             } else {
                 toast.error(result.response.data)
                 console.log(result);
@@ -70,10 +70,10 @@ function Auth() {
             toast.info('Pease fill the form completely')
         } else {
             const result = await loginAPI(userData)
-            console.log(result);
+          //  console.log(result);
             if (result.status === 200) {
                 sessionStorage.setItem("existingUser", JSON.stringify(result.data.existingUser))
-
+                
                 setUserData({
                     email: "", password: ""
                 })
@@ -85,6 +85,7 @@ function Auth() {
 
                     navigate('/')
                     handleClose2()
+                      window.location.reload();
                 }, 2000);
             } else {
                 toast.error(result.response.data)
@@ -95,9 +96,10 @@ function Auth() {
             }
         }
     }
+    
     return (
         <>
-            <Button variant="primary" onClick={handleshow1} center>
+            <Button variant="primary" onClick={handleshow2}>
                 Sign in
             </Button>
 
@@ -114,10 +116,10 @@ function Auth() {
                 </Modal.Header>
 
                 <Modal.Body>
-                    <div class="container">
+                    <div className=''>
 
-                        <div class="card">
-                            <div class="card_title">
+                        <div className="card">
+                            <div className="card_title">
                                 <h1>Create Account</h1>
                                 <span>Already have an account?  <Button variant="primary" onClick={handleshow2} center>
                                     Sign in
@@ -167,13 +169,11 @@ function Auth() {
                 </Modal.Header>
 
                 <Modal.Body>
-                    <div class="container">
-                        <div class="card">
-                            <div class="card_title">
-                                <h1>Create Account</h1>
-                                <span>Already have an account?  <Button variant="primary" onClick={handleshow1} center>
-                                    Sign up
-                                </Button></span>
+                    <div >
+                        <div className="card">
+                            <div className="card_title">
+                                <h1>Sign In</h1>
+                                <span>Don't have an account? <Button onClick={handleshow1}>Sign up</Button></span>
                             </div>
                             <Form className='text-light w-100 mt-4'>
 

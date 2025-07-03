@@ -1,33 +1,65 @@
-import React from 'react'
+import { Link, useParams } from 'react-router-dom'
 import './moviepage.css'
+import { useState, useEffect } from 'react';
+import { getMoviebyIdAPI } from '../services/allAPI';
 
 function Moviepage() {
+  const [movie, setMovie] = useState([]);
+  const { id } = useParams();
+
+  const getMoviebyId = async (movieId) => {
+    try {
+      const result = await getMoviebyIdAPI(movieId);
+      if (result.status === 200) {
+        setMovie(result.data);
+      }
+    } catch (err) {
+      console.error("Error:", err.message);
+    }
+  };
+  console.log(movie);
+
+  useEffect(() => {
+    getMoviebyId(id);
+  }, [id]);
+
   return (
     <>
-      <div class="container">
-    <div class="poster">
-      <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSCd-1hjlfXl4TnIpxP3qrPgVhy2t5_u1DaW-5Sb-mntaczer5w8TMXE1zIgNuoE0N3RYkYNw" alt="Jurassic World: Rebirth Poster"/>
-      <p style="text-align:center;">Releasing on 4 Jul, 2025</p>
-    </div>
-    <div class="details">
-      <div class="title">Jurassic World: Rebirth</div>
-      <div class="interested">👥 156.2K are interested</div>
-      <div class="formats">2D, ICE 3D, MX4D 3D, 4DX 3D, 3D, 3D SCREEN X</div>
-      <div class="info">Languages: English, Hindi, Telugu, Tamil</div>
-      <div class="info">Duration: 2h 13m | Genres: Action, Sci-Fi, Thriller | Rating: UA13+</div>
-      <button class="button">Book tickets</button>
-    </div>
-  </div>
+      <div className="container">
+        <div className="poster">
+          <img src={movie.image} alt={movie.title} />
+        </div>
+        <div className="details">
+          <div className="title">{movie.title}</div>
+          <div className="interested">👥 156.2K are interested</div>
+          <div className="formats">2D</div>
+          <div className="info">Director : {movie.director}</div>
+          <div className="info">Genre: {movie.genre?.join(', ')}</div>
 
-  <div class="about">
-    <h2>About the movie</h2>
-    <p>
-      Five years after the events of Jurassic World Dominion, the planet's ecology has proven largely inhospitable to dinosaurs. 
-      Those remaining exist in isolated equatorial environments with climates resembling the one in which they once thrived. 
-      The most colossal creatures within that tropical atmosphere hold the key to a drug that will bring miraculous life-saving 
-      benefits to humans.
-    </p>
-  </div> 
+          <div className="info">Languages : {movie.language}</div>
+          <div className="info">Duration: {movie.duration}  </div>
+            <div className="info">Rating: {movie.rating}</div>
+          <Link id='link' to={`/bookingpage`} state={{ movie: movie }}>Book Now</Link>
+          
+        </div>
+        <div>
+          <h5>Watch trailer</h5>
+          <iframe src={movie.videourl} title={movie.trailertitle} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div className="about">
+        <h2>About the movie</h2>
+        <p>
+         {movie.description}
+        </p>
+      </div>
+      <div className="about">
+        <h2>Cast</h2>
+      </div>
+      <div className="about">
+        <h2>Review</h2>
+      </div>
     </>
   )
 }
