@@ -108,7 +108,7 @@ function Navbar() {
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose2}>Close</Button>
+          <Button variant="primary" onClick={handleClose}>Close</Button>
           <Button variant="danger" onClick={handleSignout}>Signout</Button>
         </Modal.Footer>
       </Modal>
