@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import './moviepage.css'
 import { useState, useEffect } from 'react';
 import { getMoviebyIdAPI } from '../services/allAPI';
+import Navbar from '../components/navbar/Navbar';
 
 function Moviepage() {
   const [movie, setMovie] = useState([]);
@@ -27,9 +28,8 @@ function Moviepage() {
 
   return (
     <>
-          <div>
-            <Link id='link' className='mt-5 bg-dark' to={'/'} > home</Link>
-          </div>
+    <Navbar/>
+          
       <div className="container mt-2">
         <div className="poster">
           <img src={movie.image} alt={movie.title} />
@@ -48,7 +48,10 @@ function Moviepage() {
             existingUser ?
               <Link id='link' to={`/bookingpage`} state={{ movie: movie }}>Book Now</Link>
               :
-              <Link id='link' to={`/`}>Sign in</Link>
+             <div>
+               <Link id='link' to={`/`}>Sign in</Link>
+              <p className='mt-2 text-danger'>Sign to book tickets</p>
+             </div>
           }
 
 

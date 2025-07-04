@@ -1,0 +1,28 @@
+.movie-form-container h2 {
+  color: #000000;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+  text-shadow: none;
+}
+
+.movie-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.movie-form-container input,
+.movie-form-container textarea {
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #2d323c;
+  color: #fff;
+  font-size: 1rem;
+}
+
+
+
+
+

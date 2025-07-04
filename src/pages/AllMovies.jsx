@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { useEffect, useState } from 'react';
 import { getMoviesAPI } from '../services/allAPI';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/navbar/Navbar';
 
 function AllMovies() {
   const [movies, setMovies] = useState([]);
@@ -25,9 +26,9 @@ function AllMovies() {
   return (
 <>
       <div>
-        <Link id='link' className='bg-dark' to={'/'} > home</Link>
+      <Navbar/>
       </div>
- <h2>Now Playing</h2>
+ <h4 style={{textAlign:'center'}}>Now Playing</h4>
     <div className="d-flex flex-wrap gap-4 justify-content-center p-4">
      
       {movies.map((movie, index) => (

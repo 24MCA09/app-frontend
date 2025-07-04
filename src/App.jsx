@@ -4,6 +4,7 @@ import Homepage from './pages/Homepage'
 import Moviepage from './pages/Moviepage'
 import Bookingpage from './pages/Bookingpage'
 import AllMovies from './pages/AllMovies'
+import Admin from './pages/Admin'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Route path='/moviepage/:id' element={<Moviepage/>} />
       <Route path='/bookingpage' element={<Bookingpage/>} />
       <Route path="/all-movies" element={<AllMovies />} />
+      <Route path="/admin" element={<Admin/>} />
      </Routes>
     </BrowserRouter>
     </>

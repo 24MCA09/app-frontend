@@ -27,3 +27,6 @@ export const getMoviebyIdAPI = async(id)=>{
 export const getTicketbyidAPI = async(email)=>{
     return await commonAPI("GET",`${BASE_URL}/getticketbyid/${email}`)
 }
+export const createMovieAPI = async(data)=>{
+    return await commonAPI("POST",`${BASE_URL}/createmovie`,data,"")
+}

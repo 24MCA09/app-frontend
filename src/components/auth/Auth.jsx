@@ -69,34 +69,62 @@ function Auth() {
         if (!email || !password) {
             toast.info('Pease fill the form completely')
         } else {
-            const result = await loginAPI(userData)
-          //  console.log(result);
-            if (result.status === 200) {
-                sessionStorage.setItem("existingUser", JSON.stringify(result.data.existingUser))
-                
-                setUserData({
-                    email: "", password: ""
-                })
+            if (email == "admin@gmail.com") {
+                const result = await loginAPI(userData)
+                if (result.status === 200) {
+                    sessionStorage.setItem("existingUser", JSON.stringify(result.data.existingUser))
+                   
+                    setUserData({
+                        email: "", password: ""
+                    })
 
-                toast.success('Login Sucessful')
+                    toast.success('Login Sucessful')
 
-                //navigate
-                setTimeout(() => {
+                    //navigate
+                    setTimeout(() => {
 
-                    navigate('/')
-                    handleClose2()
-                      window.location.reload();
-                }, 2000);
-            } else {
-                toast.error(result.response.data)
-                console.log(result);
-                setUserData({
-                    email: "", password: ""
-                })
+                        navigate('/admin')
+                        handleClose2()
+                       
+                    }, 2000);
+                } else {
+                    toast.error(result.response.data)
+                    console.log(result);
+                    setUserData({
+                        email: "", password: ""
+                    })
+                }
+            }
+            else {
+                const result = await loginAPI(userData)
+
+                if (result.status === 200) {
+                    sessionStorage.setItem("existingUser", JSON.stringify(result.data.existingUser))
+
+                    setUserData({
+                        email: "", password: ""
+                    })
+
+                    toast.success('Login Sucessful')
+
+                    //navigate
+                    setTimeout(() => {
+
+                        navigate('/')
+                        handleClose2()
+                        window.location.reload();
+                    }, 2000);
+                } else {
+                    toast.error(result.response.data)
+                    console.log(result);
+                    setUserData({
+                        email: "", password: ""
+                    })
+                }
             }
         }
     }
-    
+
     return (
         <>
             <Button variant="primary" onClick={handleshow2}>
@@ -112,7 +140,7 @@ function Auth() {
                 centered
             >
                 <Modal.Header closeButton>
-                    <Modal.Title>Create a new account</Modal.Title>
+
                 </Modal.Header>
 
                 <Modal.Body>
@@ -120,7 +148,7 @@ function Auth() {
 
                         <div className="card">
                             <div className="card_title">
-                                <h1>Create Account</h1>
+                                <h3>Create Account</h3>
                                 <span>Already have an account?  <Button variant="primary" onClick={handleshow2} center>
                                     Sign in
                                 </Button></span>
@@ -140,9 +168,7 @@ function Auth() {
                                 </Form.Group>
 
                             </Form>
-                            <div class="card_terms">
-                                <input type="checkbox" name="" id="terms" /> <span>I have read and agree to the <a href="">Terms of Service</a></span>
-                            </div>
+
                         </div>
                     </div>
                 </Modal.Body>
@@ -165,14 +191,14 @@ function Auth() {
                 centered
             >
                 <Modal.Header closeButton>
-                    <Modal.Title>Sign in</Modal.Title>
+
                 </Modal.Header>
 
                 <Modal.Body>
                     <div >
                         <div className="card">
                             <div className="card_title">
-                                <h1>Sign In</h1>
+                                <h3>Sign In</h3>
                                 <span>Don't have an account? <Button onClick={handleshow1}>Sign up</Button></span>
                             </div>
                             <Form className='text-light w-100 mt-4'>

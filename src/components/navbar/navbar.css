@@ -1,26 +1,54 @@
-#navbar{
+#navbar {
     height: 80px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    
 }
-h2{
-    color: rgb(216, 64, 64);
+
+h2 {
+    color: rgb(189, 186, 46);
     padding: 0px 20px;
-    font-weight:600;
+    font-weight: 600;
     font-size: 50px;
-font-family: cursive;
+
+    text-shadow: 2px 2px rgb(0, 0, 0);
 }
-#nav-logo{
-    height:80px;
+
+#nav-logo {
+    height: 80px;
     width: 80px;
 }
-#nav-items{
+
+#nav-items {
     display: flex;
     gap: 50px;
     align-items: center;
     padding: 0px 20px;
 }
-#nav-items p{
+
+#nav-items p {
     color: white;
+}
+#nav-items button{
+    background: transparent;
+    border: none;
+}
+#nav-items button a {
+color: white;
+    text-decoration: none;
+}
+#nav-items button:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+.user-info{
+    display: flex;
+    gap: 30px;
+}
+#booked-ticket{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }

@@ -4,6 +4,7 @@ import "./navbar.css"
 import Auth from '../auth/Auth'
 import { useEffect, useState } from 'react';
 import { getTicketbyidAPI } from '../../services/allAPI';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [show, setshow] = useState(false);
@@ -44,12 +45,20 @@ function Navbar() {
   return (
     <>
       <div id='navbar'>
-        <div><h2>BOOKNOW</h2></div>
+        <div><a href="/" style={{textDecoration:'none'}}><h2>BOOKNOW</h2></a></div>
         <div id='nav-items'>
+          <div>
+            <Button>
+              <a href="/"> Home</a>
+            </Button>
+          </div>
           {existingUser ? (
             <div className="user-info">
-              <Button variant="primary" onClick={handleshow}>
-                <span>{existingUser.username}</span>
+              <Button>
+                <a href="/all-movies"> Movies</a>
+              </Button>
+              <Button onClick={handleshow}>
+                <span>Profile</span>
               </Button>
             </div>
           ) : (
@@ -117,14 +126,19 @@ function Navbar() {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title>{selectedTicket?.title || "Ticket Details"}</Modal.Title>
+        
         </Modal.Header>
 
         <Modal.Body>
+          <h3 style={{textAlign:'center'}}>{selectedTicket?.title || "Ticket Details"}</h3>
           {selectedTicket ? (
             <div className="ticket-details text-center">
-              <img src={selectedTicket.image} alt={selectedTicket.title} style={{ maxWidth: '200px', borderRadius: '10px' }} />
-              
+              <div id='booked-ticket'>
+
+                <img src={selectedTicket.image} alt={selectedTicket.title} style={{ maxWidth: '200px', borderRadius: '10px' }} />
+                <p>Use this to redeem Ticket</p>
+                <img src="https://docs.lightburnsoftware.com/legacy/img/QRCode/ExampleCode.png" alt="qr code unavailable" style={{ width: '130px', height: '130px', borderRadius: '10px' }} />
+              </div>
               <p className="mt-3"><strong>Seats:</strong> {selectedTicket.seatid.join(', ')}</p>
               <p><strong>Theatre:</strong> {selectedTicket.theatre}</p>
               <p><strong>Time:</strong> {selectedTicket.time}</p>

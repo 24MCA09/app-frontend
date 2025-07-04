@@ -6,6 +6,7 @@ import { bookTicketAPI } from '../services/allAPI';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Navbar from '../components/navbar/Navbar';
 
 const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
 const seatsPerRow = 20;
@@ -86,9 +87,9 @@ function BookingPage() {
   }
   return (
     <>
-      <div>
-        <Link id='link' className='bg-dark' to={'/'} > home</Link>
-      </div>
+   <div>
+    <Navbar/>
+   </div>
       <div className="container mt-2">
 
         <div>

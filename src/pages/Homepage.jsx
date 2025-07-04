@@ -3,16 +3,21 @@ import Navbar from '../components/navbar/Navbar'
 import './homepage.css'
 import Homecaro1 from '../components/Homecaro1'
 import Cards from '../components/Cards'
-import Moviepage from './Moviepage'
 import Footer from '../components/Footer'
-
+import bvideo from "../assests/bvideo.mp4"
 function Homepage() {
   return (
-    <div>
+
+
+    <div class="video-background">
+  <video autoPlay muted loop playsinline>
+    <source src={bvideo} type="video/mp4" />
+  </video>
         <div id='main-home'>
             <Navbar/>
 
            <div className='home-heads'>
+            
              <h1>
               Unlimited movies,
             </h1>
@@ -21,7 +26,7 @@ function Homepage() {
             </h1>
            </div>
         </div>
-        <div>
+        <div style={{marginTop:'100px'}}>
           <Homecaro1/>
         </div>
         <div>
