@@ -87,7 +87,7 @@ function BookingPage() {
   return (
     <>
       <div>
-        <Link id='link' className='m-5 bg-dark' to={'/'} > home</Link>
+        <Link id='link' className='bg-dark' to={'/'} > home</Link>
       </div>
       <div className="container mt-2">
 
@@ -228,8 +228,10 @@ function BookingPage() {
           <div className="container bg-light">
             <div className="poster text-center">
               <img src={result.image} alt={result.title} style={{ maxWidth: '200px', borderRadius: '10px' }} />
+             
             </div>
             <div className="details mt-3">
+               <img src="https://docs.lightburnsoftware.com/legacy/img/QRCode/ExampleCode.png" alt={result.title} style={{ width: '120px',height:'120px', borderRadius: '10px' }} />
               <h4 className="title">{result.title}</h4>
               <p><strong>Theatre:</strong> {result.theatre}</p>
               <p><strong>Show Time:</strong> {result.time}</p>

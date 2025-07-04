@@ -5,8 +5,9 @@
     justify-content: space-between;
 }
 h2{
-    color: white;
+    color: rgb(216, 64, 64);
     padding: 0px 20px;
+    font-weight:600;
     font-size: 50px;
 font-family: cursive;
 }

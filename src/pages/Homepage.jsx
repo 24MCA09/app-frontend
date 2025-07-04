@@ -12,12 +12,14 @@ function Homepage() {
         <div id='main-home'>
             <Navbar/>
 
-            <h1>
+           <div className='home-heads'>
+             <h1>
               Unlimited movies,
             </h1>
              <h1>
               TV shows and more
             </h1>
+           </div>
         </div>
         <div>
           <Homecaro1/>

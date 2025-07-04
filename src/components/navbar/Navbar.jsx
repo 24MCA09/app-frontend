@@ -124,6 +124,7 @@ function Navbar() {
           {selectedTicket ? (
             <div className="ticket-details text-center">
               <img src={selectedTicket.image} alt={selectedTicket.title} style={{ maxWidth: '200px', borderRadius: '10px' }} />
+              
               <p className="mt-3"><strong>Seats:</strong> {selectedTicket.seatid.join(', ')}</p>
               <p><strong>Theatre:</strong> {selectedTicket.theatre}</p>
               <p><strong>Time:</strong> {selectedTicket.time}</p>

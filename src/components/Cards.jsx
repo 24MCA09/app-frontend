@@ -13,7 +13,7 @@ function Cards() {
     try {
       const result = await getMoviesAPI();
       if (result.status === 200) {
-        setAllMovies(result.data.slice(0, 4)); // ✅ only 4 movies
+        setAllMovies(result.data.slice(0, 4));
       }
     } catch (err) {
       console.error("Error:", err.message);
@@ -24,6 +24,8 @@ function Cards() {
     getMovies();
   }, []);
 
+  console.log(allMovies);
+  
   return (
     <div className="d-flex flex-column align-items-center p-4">
       <div className="d-flex flex-wrap gap-4 justify-content-center">

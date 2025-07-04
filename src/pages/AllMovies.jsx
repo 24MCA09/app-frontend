@@ -23,7 +23,13 @@ function AllMovies() {
   }, []);
 
   return (
+<>
+      <div>
+        <Link id='link' className='bg-dark' to={'/'} > home</Link>
+      </div>
+ <h2>Now Playing</h2>
     <div className="d-flex flex-wrap gap-4 justify-content-center p-4">
+     
       {movies.map((movie, index) => (
         <Card key={index} style={{ width: '18rem' }}>
           <Card.Img variant="top" src={movie.image} style={{ height: '300px', objectFit: 'cover' }} />
@@ -35,6 +41,8 @@ function AllMovies() {
         </Card>
       ))}
     </div>
+</>
+
   );
 }
 

@@ -6,6 +6,7 @@ import { getMoviebyIdAPI } from '../services/allAPI';
 function Moviepage() {
   const [movie, setMovie] = useState([]);
   const { id } = useParams();
+  const existingUser = JSON.parse(sessionStorage.getItem("existingUser"));
 
   const getMoviebyId = async (movieId) => {
     try {
@@ -22,10 +23,14 @@ function Moviepage() {
   useEffect(() => {
     getMoviebyId(id);
   }, [id]);
+  console.log(movie.image);
 
   return (
     <>
-      <div className="container">
+          <div>
+            <Link id='link' className='mt-5 bg-dark' to={'/'} > home</Link>
+          </div>
+      <div className="container mt-2">
         <div className="poster">
           <img src={movie.image} alt={movie.title} />
         </div>
@@ -38,20 +43,33 @@ function Moviepage() {
 
           <div className="info">Languages : {movie.language}</div>
           <div className="info">Duration: {movie.duration}  </div>
-            <div className="info">Rating: {movie.rating}</div>
-          <Link id='link' to={`/bookingpage`} state={{ movie: movie }}>Book Now</Link>
-          
+          <div className="info">Rating: {movie.rating}</div>
+          {
+            existingUser ?
+              <Link id='link' to={`/bookingpage`} state={{ movie: movie }}>Book Now</Link>
+              :
+              <Link id='link' to={`/`}>Sign in</Link>
+          }
+
+
         </div>
         <div>
           <h5>Watch trailer</h5>
-          <iframe src={movie.videourl} title={movie.trailertitle} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe
+            src={`${movie.videourl}?autoplay=1&mute=1`}
+            title={movie.trailertitle}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
         </div>
       </div>
 
       <div className="about">
         <h2>About the movie</h2>
         <p>
-         {movie.description}
+          {movie.description}
         </p>
       </div>
       <div className="about">
